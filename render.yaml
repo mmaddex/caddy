@@ -1,0 +1,10 @@
+# Exported from Render on 2024-04-02T19:09:42Z
+services:
+- type: web
+  name: caddy
+  runtime: docker
+  envVars:
+  - key: DOWNSTREAM_APP
+    sync: false
+  region: oregon
+version: "1"
