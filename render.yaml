@@ -4,7 +4,9 @@ services:
   name: caddy
   runtime: docker
   envVars:
-  - key: DOWNSTREAM_APP
+  - key: DOWNSTREAM_HOST
+    sync: false
+  - key: DOWNSTREAM_PORT
     sync: false
   region: oregon
 version: "1"
