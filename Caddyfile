@@ -1,3 +1,6 @@
 :{$PORT} {
+  handle /caddyhealth {
+		respond "OK" 200
+	}
   reverse_proxy http://{$DOWNSTREAM_HOST}:{$DOWNSTREAM_PORT}
 }
