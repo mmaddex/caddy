@@ -2,10 +2,5 @@
 FROM caddy
 RUN setcap -r /usr/bin/caddy
 ARG DOWNSTREAM_APP
-COPY <<EOF /etc/caddy/Caddyfile
-:10000 {
-  reverse_proxy http://$DOWNSTREAM_APP:10000 {
-    lb_try_duration 60s
-  }
-}
-EOF
+COPY Cadyfile /etc/caddy/Caddyfile
+
