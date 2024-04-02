@@ -3,6 +3,7 @@ services:
 - type: web
   name: caddy
   runtime: docker
+  healthCheckPath: /caddyhealth
   envVars:
   - key: DOWNSTREAM_HOST
     sync: false
