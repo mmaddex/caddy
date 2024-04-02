@@ -1,5 +1,3 @@
-:10000 {
-  reverse_proxy http://{$DOWNSTREAM_HOST}:{$DOWNSTREAM_PORT} {
-    lb_try_duration 60s
-  }
+:{$PORT} {
+  reverse_proxy http://{$DOWNSTREAM_HOST}:{$DOWNSTREAM_PORT}
 }
