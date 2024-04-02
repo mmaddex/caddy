@@ -2,5 +2,5 @@
 FROM caddy
 RUN setcap -r /usr/bin/caddy
 ARG DOWNSTREAM_APP
-COPY Cadyfile /etc/caddy/Caddyfile
+COPY Caddyfile /etc/caddy/Caddyfile
 
