@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # https://tailscale.com/kb/1190/caddy-certificates
 # https://caddy.community/t/https-in-your-vpn-caddy-now-uses-tls-certificates-from-tailscale/15380
 echo Tailscale starting
