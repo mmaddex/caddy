@@ -16,4 +16,4 @@ RUN ls /etc/caddy/
 RUN --mount=type=secret,id=caddyfile,dst=/etc/secrets/caddyfile cat /etc/secrets/caddyfile > /etc/caddy/Caddyfile
 
 ARG TS_AUTHKEY
-#CMD ["/src/tailscaled --tun=userspace-networking --socks5-server=localhost:1055 & /src/tailscale up --authkey=${TS_AUTHKEY} --hostname=customer-ctx-caddy"]
+CMD ["tailscaled --tun=userspace-networking --socks5-server=localhost:1055 & tailscale up --authkey=${TS_AUTHKEY} --hostname=customer-ctx-caddy"]
