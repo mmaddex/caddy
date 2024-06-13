@@ -17,5 +17,5 @@ RUN --mount=type=secret,id=caddyfile,dst=/etc/secrets/caddyfile cat /etc/secrets
 
 COPY . /srv
 RUN chmod +x /srv/start.sh
-
-CMD ["/srv/start.sh"]
+ARG TS_AUTHKEY
+RUN /srv/start.sh
