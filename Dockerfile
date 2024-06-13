@@ -4,6 +4,7 @@ RUN setcap -r /usr/bin/caddy
 ARG DOWNSTREAM_HOST
 ARG DOWNSTREAM_PORT=10000
 ARG PORT
+EXPOSE 10000
 #COPY Caddyfile /etc/caddy/Caddyfile
 WORKDIR /srv
 
