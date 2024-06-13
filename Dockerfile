@@ -15,7 +15,7 @@ RUN --mount=type=secret,id=caddyfile,dst=/etc/secrets/caddyfile cat /etc/secrets
 RUN ls /etc/caddy/
 RUN --mount=type=secret,id=caddyfile,dst=/etc/secrets/caddyfile cat /etc/secrets/caddyfile > /etc/caddy/Caddyfile
 
-COPY start.sh ./
+COPY . /srv
 RUN chmod +x ./start.sh
 
 CMD ["start.sh"]
