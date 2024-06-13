@@ -15,5 +15,7 @@ RUN --mount=type=secret,id=caddyfile,dst=/etc/secrets/caddyfile cat /etc/secrets
 RUN ls /etc/caddy/
 RUN --mount=type=secret,id=caddyfile,dst=/etc/secrets/caddyfile cat /etc/secrets/caddyfile > /etc/caddy/Caddyfile
 
-ARG TS_AUTHKEY
-CMD ["./tailscaled --tun=userspace-networking --socks5-server=localhost:1055 & ./tailscale up --authkey=${TS_AUTHKEY} --hostname=customer-ctx-caddy"]
+COPY start.sh ./
+RUN chmod +x ./start.sh
+
+CMD ["start.sh"]
