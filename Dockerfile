@@ -18,4 +18,4 @@ RUN --mount=type=secret,id=caddyfile,dst=/etc/secrets/caddyfile cat /etc/secrets
 COPY . /srv
 RUN chmod +x /srv/start.sh
 
-CMD ["start.sh"]
+CMD ["/srv/start.sh"]
